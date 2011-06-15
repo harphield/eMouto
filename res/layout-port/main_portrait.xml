@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    <TableLayout android:id="@+id/tableLayout1" android:layout_height="fill_parent" android:layout_width="fill_parent">
+        <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="560px" android:id="@+id/mainScreen">
+				<org.anddev.andengine.opengl.view.RenderSurfaceView 
+				android:id="@+id/main_portrait_rendersurfaceview"
+				android:layout_width="480px" 
+				android:layout_height="560px"
+				android:layout_margin="0px" />            
+            </LinearLayout>
+        </TableRow>
+        <TableRow android:id="@+id/tableRow2" android:layout_height="wrap_content" android:layout_width="fill_parent">
+            <LinearLayout android:layout_height="140px" android:layout_width="480px" android:id="@+id/textField"></LinearLayout>
+        </TableRow>
+        <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:layout_height="100px" android:id="@+id/menuField" android:layout_width="480px"></LinearLayout>
+        </TableRow>
+    </TableLayout>
+</FrameLayout>
