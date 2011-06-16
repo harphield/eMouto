@@ -15,10 +15,8 @@ public class OpenMenu implements ICommand
 	@Override
 	public void execute(Object data) 
 	{
-		// data = scene
-		if (!((Scene) data).hasChildScene())
-		{
-			((Scene) data).setChildScene(menuscene);
-		}
+		if (data instanceof Scene)
+			if (!((Scene) data).hasChildScene())
+				((Scene) data).setChildScene(menuscene);
 	}
 }
