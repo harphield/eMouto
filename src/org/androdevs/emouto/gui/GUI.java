@@ -23,6 +23,7 @@ import org.anddev.andengine.opengl.texture.region.TextureRegion;
 import org.anddev.andengine.opengl.texture.region.TextureRegionFactory;
 import org.anddev.andengine.ui.activity.BaseGameActivity;
 import org.androdevs.emouto.EmoutoGame;
+import org.androdevs.emouto.character.GameCharacter;
 import org.androdevs.emouto.commands.ChangeBlockVisibility;
 import org.androdevs.emouto.commands.OpenMenu;
 import org.androdevs.emouto.gui.layout.Block;
@@ -72,11 +73,21 @@ public class GUI implements IOnMenuItemClickListener
 		textBlock = new Block(0, 550, false);
 		menuBlock = new Block(0, 700, true);
 		
-		Texture mTexture = new Texture(512, 1024, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
-		TextureRegion mTextureRegion = TextureRegionFactory.createFromAsset(mTexture, game, "gfx/imouto_bg_larger.jpg", 0, 0);
-		game.loadTex(mTexture);
+//		Texture mTexture = new Texture(512, 1024, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
+//		TextureRegion mTextureRegion = TextureRegionFactory.createFromAsset(mTexture, game, "gfx/imouto_bg_larger.jpg", 0, 0);
+//		game.loadTex(mTexture);		
+//		mainBlock.attachChild(new Sprite(0, 0, mTextureRegion));
 		
-		mainBlock.attachChild(new Sprite(0, 0, mTextureRegion));
+		// test character
+		GameCharacter testchar = new GameCharacter("Test", "Char");
+		testchar.fillTestChar(game);
+		testchar.initialize();
+		
+		Rectangle bgrect = new Rectangle(0,0, EmoutoGame.CAMERA_WIDTH, 700);
+		bgrect.setColor(1, 1, 1);		
+		
+		mainBlock.attachChild(bgrect);
+		mainBlock.attachChild(testchar);
 		
 		// text block stuff
 //		Rectangle textrect = new Rectangle(0,0, 480, 140);
@@ -150,9 +161,6 @@ public class GUI implements IOnMenuItemClickListener
 	
 	public void attachBlocks(Scene scene)
 	{
-//		mainBlock.attachChildren(scene);
-//		textBlock.attachChildren(scene);
-//		menuBlock.attachChildren(scene);
 		scene.getFirstChild().attachChild(mainBlock);
 		scene.getFirstChild().attachChild(textBlock);
 		scene.getFirstChild().attachChild(menuBlock);

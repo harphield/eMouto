@@ -2,6 +2,12 @@ package org.androdevs.emouto.commands;
 
 import org.androdevs.emouto.gui.layout.Block;
 
+/**
+ * Showing and hiding UI blocks.
+ * Perpetual means it will be hidden when it's visible and shown when it's hidden.
+ * @author harph
+ *
+ */
 public class ChangeBlockVisibility implements ICommand 
 {
 	private Block block;
