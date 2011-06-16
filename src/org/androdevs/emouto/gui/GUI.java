@@ -158,12 +158,19 @@ public class GUI implements IOnMenuItemClickListener
 		scene.getFirstChild().attachChild(menuBlock);
 	}
 	
+	/**
+	 * TODO font should be able to change it's size, hopefully.
+	 * @param fontname
+	 * @param game
+	 * @param engine
+	 * @return
+	 */
 	private Font loadFont(String fontname, BaseGameActivity game, Engine engine)
 	{
 		Texture mFontTexture = new Texture(256, 256, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
 
 		FontFactory.setAssetBasePath("fonts/");
-		Font f = FontFactory.createFromAsset(mFontTexture, game, fontname, 24, true, Color.WHITE);
+		Font f = FontFactory.createFromAsset(mFontTexture, game, fontname, 32, true, Color.WHITE);
 		engine.getTextureManager().loadTexture(mFontTexture);
 		engine.getFontManager().loadFont(f);
 		

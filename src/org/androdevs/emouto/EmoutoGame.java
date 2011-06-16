@@ -52,7 +52,7 @@ public class EmoutoGame extends BaseGameActivity
         CAMERA_WIDTH = dm.widthPixels;
         CAMERA_HEIGHT = dm.heightPixels;
         this.mCamera = new Camera(0, 0, dm.widthPixels, dm.heightPixels);
-        return new Engine(new EngineOptions(true, ScreenOrientation.LANDSCAPE,
+        return new Engine(new EngineOptions(true, ScreenOrientation.PORTRAIT,
                 new RatioResolutionPolicy(dm.widthPixels, dm.heightPixels), this.mCamera));	
 		
 //		this.mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
