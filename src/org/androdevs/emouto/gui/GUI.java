@@ -112,7 +112,7 @@ public class GUI implements IOnMenuItemClickListener
 		TextureRegion button2texreg = TextureRegionFactory.createFromAsset(button2tex, game, "gfx/button_bubble.png", 0, 0);
 		game.loadTex(button2tex);
 		Texture button3tex = new Texture(128, 128, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
-		TextureRegion button3texreg = TextureRegionFactory.createFromAsset(button3tex, game, "gfx/button_candy.png", 0, 0);
+		TextureRegion button3texreg = TextureRegionFactory.createFromAsset(button3tex, game, "gfx/button_food.png", 0, 0);
 		game.loadTex(button3tex);
 		Texture button4tex = new Texture(128, 128, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
 		TextureRegion button4texreg = TextureRegionFactory.createFromAsset(button4tex, game, "gfx/button_alarm.png", 0, 0);
