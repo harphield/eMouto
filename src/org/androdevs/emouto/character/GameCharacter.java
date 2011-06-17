@@ -3,7 +3,6 @@ package org.androdevs.emouto.character;
 import java.util.HashMap;
 
 import org.anddev.andengine.entity.layer.Layer;
-import org.anddev.andengine.entity.sprite.AnimatedSprite;
 import org.anddev.andengine.entity.sprite.Sprite;
 import org.anddev.andengine.opengl.texture.Texture;
 import org.anddev.andengine.opengl.texture.TextureOptions;
