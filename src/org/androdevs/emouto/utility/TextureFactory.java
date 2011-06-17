@@ -20,6 +20,7 @@ public class TextureFactory {
 			AssetTextureSource source = new AssetTextureSource(GUI.game, basePath+"/"+file);  
 			Texture texture = new Texture(MathUtils.nextPowerOfTwo(source.getWidth()), 
 				MathUtils.nextPowerOfTwo(source.getHeight()), TextureOptions.NEAREST_PREMULTIPLYALPHA);
+
 			TextureRegion region = TextureRegionFactory.createFromAsset(texture, GUI.game, basePath+"/"+file, offsetX, offsetY);
 			game.loadTex(texture);
 			return region;

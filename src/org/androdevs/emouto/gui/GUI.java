@@ -63,7 +63,7 @@ public class GUI implements IOnMenuItemClickListener
 	public void setupGUI(EmoutoGame game, Scene scene, Camera mCamera, Engine engine)
 	{
 		fonts = new HashMap<String, Font>();
-		this.game = game;
+		GUI.game = game;
 		mainscene = scene;
 		
 		// TODO magic numbers
@@ -90,7 +90,7 @@ public class GUI implements IOnMenuItemClickListener
 		textBlock.attachChild(new Sprite(0, 0, TextureFactory.loadRegion("speech_bubble")));
 
 		String[] options = {"pat on head", "smile", "give thumbs up"};
-		String[] files = {"button_heart", "button_bubble", "button_food", "button_alarm"};
+		String[] files = {"button_heart", "button_talk", "button_food", "button_alarm"};
 		ICommand[] commands = {
 			new OpenMenu(new TextMenu(options,mCamera,this)),
 			new ChangeBlockVisibility(textBlock)
