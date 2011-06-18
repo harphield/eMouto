@@ -8,7 +8,7 @@ import org.anddev.andengine.entity.sprite.BaseSprite;
  * @author harph
  *
  */
-public abstract class BodyPart extends Layer
+public class BodyPart extends Layer
 {
 	public static final int BP_TYPE_SINGLE 		= 1;
 	public static final int BP_TYPE_TILED 		= 2;
@@ -20,7 +20,7 @@ public abstract class BodyPart extends Layer
 	 */
 	private int type;	
 	
-	protected BodyPart(BaseSprite sprite, int type)
+	public BodyPart(BaseSprite sprite, int type)
 	{
 		this.sprite = sprite;
 		this.type = type;

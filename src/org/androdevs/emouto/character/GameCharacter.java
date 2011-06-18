@@ -9,6 +9,7 @@ import org.anddev.andengine.opengl.texture.TextureOptions;
 import org.anddev.andengine.opengl.texture.region.TextureRegion;
 import org.anddev.andengine.opengl.texture.region.TextureRegionFactory;
 import org.androdevs.emouto.EmoutoGame;
+import org.androdevs.emouto.utility.TextureFactory;
 
 /**
  * The character class. Each character consists of more parts:
@@ -68,26 +69,13 @@ public class GameCharacter extends Layer
 	
 	public void fillTestChar(EmoutoGame game)
 	{				
-		bodyparts.put(CHAR_BODYPART_HAIR_BACK, 	new HairBack(new Sprite(0,0, loadTexForChar("hair_back.png", game))));
-		bodyparts.put(CHAR_BODYPART_BODY, 		new Body(new Sprite(0,0, loadTexForChar("body.png", game))));
-		bodyparts.put(CHAR_BODYPART_FACE, 		new Face(new Sprite(0,0, loadTexForChar("head.png", game))));
-		bodyparts.put(CHAR_BODYPART_EYES, 		new Eyes(new Sprite(0,0, loadTexForChar("eyes.png", game))));
-		bodyparts.put(CHAR_BODYPART_NOSE, 		new Nose(new Sprite(0,0, loadTexForChar("nose.png", game))));
-		bodyparts.put(CHAR_BODYPART_MOUTH, 		new Mouth(new Sprite(0,0, loadTexForChar("mouth.png", game))));
-		bodyparts.put(CHAR_BODYPART_HAIR_FRONT, new HairFront(new Sprite(0,0, loadTexForChar("hair_front.png", game))));
-		bodyparts.put(CHAR_BODYPART_ARMS, 		new Arms(new Sprite(0,0, loadTexForChar("arms.png", game))));
-	}
-	
-	/**
-	 * This is just for testing, there should be a tex manager or something to do this stuff.
-	 * @return
-	 */
-	private TextureRegion loadTexForChar(String name, EmoutoGame game)
-	{
-		Texture bhTexture = new Texture(512, 1024, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
-		TextureRegion bhTextureRegion = TextureRegionFactory.createFromAsset(bhTexture, game, "gfx/character/"+name, 0, 0);
-		game.loadTex(bhTexture);
-		
-		return bhTextureRegion;
+		bodyparts.put(CHAR_BODYPART_HAIR_BACK, 	new BodyPart(new Sprite(0,0, TextureFactory.loadRegion("character/hair_back.png")), BodyPart.BP_TYPE_SINGLE));
+		bodyparts.put(CHAR_BODYPART_BODY, 		new BodyPart(new Sprite(0,0, TextureFactory.loadRegion("character/body.png")), BodyPart.BP_TYPE_SINGLE));
+		bodyparts.put(CHAR_BODYPART_FACE, 		new BodyPart(new Sprite(0,0, TextureFactory.loadRegion("character/head.png")), BodyPart.BP_TYPE_SINGLE));
+		bodyparts.put(CHAR_BODYPART_EYES, 		new BodyPart(new Sprite(0,0, TextureFactory.loadRegion("character/eyes.png")), BodyPart.BP_TYPE_SINGLE));
+		bodyparts.put(CHAR_BODYPART_NOSE, 		new BodyPart(new Sprite(0,0, TextureFactory.loadRegion("character/nose.png")), BodyPart.BP_TYPE_SINGLE));
+		bodyparts.put(CHAR_BODYPART_MOUTH, 		new BodyPart(new Sprite(0,0, TextureFactory.loadRegion("character/mouth.png")), BodyPart.BP_TYPE_SINGLE));
+		bodyparts.put(CHAR_BODYPART_HAIR_FRONT, new BodyPart(new Sprite(0,0, TextureFactory.loadRegion("character/hair_front.png")), BodyPart.BP_TYPE_SINGLE));
+		bodyparts.put(CHAR_BODYPART_ARMS, 		new BodyPart(new Sprite(0,0, TextureFactory.loadRegion("character/arms.png")), BodyPart.BP_TYPE_SINGLE));
 	}
 }
