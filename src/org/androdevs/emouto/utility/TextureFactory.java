@@ -31,6 +31,6 @@ public class TextureFactory {
 	}
 	
 	public static TextureRegion loadRegion(String file) {
-		return loadRegion(file,0,0);
+		return loadRegion(file, 0, 0);
 	}
 }

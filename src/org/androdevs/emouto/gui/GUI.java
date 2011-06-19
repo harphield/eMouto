@@ -42,6 +42,7 @@ public class GUI implements IOnMenuItemClickListener
 	
 	public static HashMap<String, Font> fonts;
 	public static EmoutoGame game;
+	public static GameCharacter mainCharacter;
 	
 	public static GUI i()
 	{
@@ -72,15 +73,16 @@ public class GUI implements IOnMenuItemClickListener
 		menuBlock = new Block(0, 700, true);
 		
 		// test character
-		GameCharacter testchar = new GameCharacter("Test", "Char");
-		testchar.fillTestChar(game);
-		testchar.initialize();
+		mainCharacter = new GameCharacter("Test", "Char");
+//		testchar.fillTestChar(game);
+		mainCharacter.randomize(GUI.game);
+		mainCharacter.initialize();		
 		
 		Rectangle bgrect = new Rectangle(0,0, EmoutoGame.CAMERA_WIDTH, 700);
 		bgrect.setColor(1, 1, 1);
 		
 		mainBlock.attachChild(bgrect);
-		mainBlock.attachChild(testchar);
+		mainBlock.attachChild(mainCharacter);
 		
 		// menu block stuff
 		Rectangle menurect = new Rectangle(0, 0, 480, 100);
@@ -93,7 +95,14 @@ public class GUI implements IOnMenuItemClickListener
 		String[] files = {"button_heart", "button_talk", "button_food", "button_alarm"};
 		ICommand[] commands = {
 			new OpenMenu(new TextMenu(options,mCamera,this)),
-			new ChangeBlockVisibility(textBlock)
+			new ChangeBlockVisibility(textBlock),
+			new ICommand() {
+
+				@Override
+				public void execute(Object data) {
+					mainCharacter.randomize(GUI.game);
+					mainCharacter.initialize();
+				} }
 		};
 		menuBlock.attachHoriButtons(scene, 30, 20, 76, 59, 36, files, commands);		
 	}

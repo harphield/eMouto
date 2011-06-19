@@ -20,10 +20,11 @@ public class BodyPart extends Layer
 	 */
 	private int type;	
 	
-	public BodyPart(BaseSprite sprite, int type)
+	public BodyPart(int x, int y, BaseSprite sprite, int type)
 	{
 		this.sprite = sprite;
 		this.type = type;
+		this.setPosition(x, y);
 		
 		this.attachChild(this.sprite);
 	}
