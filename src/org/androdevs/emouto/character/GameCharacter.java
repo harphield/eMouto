@@ -109,11 +109,22 @@ public class GameCharacter extends Layer
 			file = files[r.nextInt(files.length)];
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_FACE, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/face/"+file)), BodyPart.BP_TYPE_SINGLE));
+
+			files = assetManager.list("gfx/character/mouth");
+//			file = files[r.nextInt(files.length)];
+			file = files[9];
+			pos = getBodypartMargins(file);
+			bodyparts.put(CHAR_BODYPART_MOUTH, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/mouth/"+file)), BodyPart.BP_TYPE_SINGLE));			
 			
 			files = assetManager.list("gfx/character/hair_front");
 			file = files[r.nextInt(files.length)];
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_HAIR_FRONT, new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/hair_front/"+file)), BodyPart.BP_TYPE_SINGLE));
+
+			files = assetManager.list("gfx/character/eyes");
+			file = files[r.nextInt(files.length)];
+			pos = getBodypartMargins(file);
+			bodyparts.put(CHAR_BODYPART_EYES, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/eyes/"+file)), BodyPart.BP_TYPE_SINGLE));
 			
 						
 		} catch (IOException e) {
@@ -127,6 +138,7 @@ public class GameCharacter extends Layer
 	 * Format is:
 	 * 
 	 * name_X_Y.png
+	 * 
 	 * @param filename
 	 * @return
 	 * @throws IOException 

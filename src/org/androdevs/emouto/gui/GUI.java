@@ -57,6 +57,9 @@ public class GUI implements IOnMenuItemClickListener
 	
 	/**
 	 * This function is just for test. It's shit thrown together.
+	 * 
+	 * Everything should be placed according to the dimensions 800x480
+	 * It will be scaled automagically.
 	 * @param game
 	 * @param scene
 	 * @param mCamera
@@ -78,7 +81,7 @@ public class GUI implements IOnMenuItemClickListener
 		mainCharacter.randomize(GUI.game);
 		mainCharacter.initialize();		
 		
-		Rectangle bgrect = new Rectangle(0,0, EmoutoGame.CAMERA_WIDTH, 700);
+		Rectangle bgrect = new Rectangle(0,0, 480, 700);
 		bgrect.setColor(1, 1, 1);
 		
 		mainBlock.attachChild(bgrect);

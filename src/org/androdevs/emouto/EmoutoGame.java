@@ -84,7 +84,9 @@ public class EmoutoGame extends BaseGameActivity
 
 	@Override
 	public void onLoadComplete() {
-		
+		// The scene is scaled according to the real width / height. 800x480 is taken as the default and 
+		// everything should be positioned with these dimensions.
+		scene.setScale(CAMERA_WIDTH / 480f, CAMERA_HEIGHT / 800f);
 	}
 	
 	@Override
