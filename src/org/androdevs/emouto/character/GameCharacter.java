@@ -111,8 +111,8 @@ public class GameCharacter extends Layer
 			bodyparts.put(CHAR_BODYPART_FACE, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/face/"+file)), BodyPart.BP_TYPE_SINGLE));
 
 			files = assetManager.list("gfx/character/mouth");
-//			file = files[r.nextInt(files.length)];
-			file = files[9];
+			file = files[r.nextInt(files.length)];
+//			file = files[12];
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_MOUTH, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/mouth/"+file)), BodyPart.BP_TYPE_SINGLE));			
 			
