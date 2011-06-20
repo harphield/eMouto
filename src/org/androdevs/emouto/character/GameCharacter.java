@@ -91,13 +91,13 @@ public class GameCharacter extends Layer
 		AssetManager assetManager = game.getAssets();
 		bodyparts.clear();
 		try {
-			Random r = new Random();			
+			final Random r = new Random();			
 
 			String[] files = assetManager.list("gfx/character/hair_back");
 			String file = files[r.nextInt(files.length)];
 			
 			int[] pos = getBodypartMargins(file);
-			bodyparts.put(CHAR_BODYPART_HAIR_BACK, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/hair_back/"+file)), BodyPart.BP_TYPE_SINGLE));
+			bodyparts.put(CHAR_BODYPART_HAIR_BACK, 	new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/hair_back/"+file)), BodyPart.BP_TYPE_SINGLE));
 			
 			files = assetManager.list("gfx/character/body");
 			file = files[r.nextInt(files.length)];
@@ -112,7 +112,6 @@ public class GameCharacter extends Layer
 
 			files = assetManager.list("gfx/character/mouth");
 			file = files[r.nextInt(files.length)];
-//			file = files[12];
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_MOUTH, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/mouth/"+file)), BodyPart.BP_TYPE_SINGLE));			
 			
@@ -125,6 +124,11 @@ public class GameCharacter extends Layer
 			file = files[r.nextInt(files.length)];
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_EYES, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/eyes/"+file)), BodyPart.BP_TYPE_SINGLE));
+
+			files = assetManager.list("gfx/character/arms");
+			file = files[r.nextInt(files.length)];
+			pos = getBodypartMargins(file);
+			bodyparts.put(CHAR_BODYPART_ARMS, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/arms/"+file)), BodyPart.BP_TYPE_SINGLE));
 			
 						
 		} catch (IOException e) {
