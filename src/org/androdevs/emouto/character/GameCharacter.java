@@ -6,15 +6,10 @@ import java.util.Random;
 
 import org.anddev.andengine.entity.layer.Layer;
 import org.anddev.andengine.entity.sprite.Sprite;
-import org.anddev.andengine.opengl.texture.Texture;
-import org.anddev.andengine.opengl.texture.TextureOptions;
-import org.anddev.andengine.opengl.texture.region.TextureRegion;
-import org.anddev.andengine.opengl.texture.region.TextureRegionFactory;
 import org.androdevs.emouto.EmoutoGame;
 import org.androdevs.emouto.utility.TextureFactory;
 
 import android.content.res.AssetManager;
-import android.util.Log;
 
 /**
  * The character class. Each character consists of more parts:
@@ -25,6 +20,7 @@ import android.util.Log;
  * - mouth
  * - body / clothes
  * - hands
+ * - eyebrows
  * 
  * (some more / less?)
  * 
@@ -125,12 +121,16 @@ public class GameCharacter extends Layer
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_EYES, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/eyes/"+file)), BodyPart.BP_TYPE_SINGLE));
 
+			files = assetManager.list("gfx/character/eyebrows");
+			file = files[r.nextInt(files.length)];
+			pos = getBodypartMargins(file);
+			bodyparts.put(CHAR_BODYPART_EYEBROWS, 	new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/eyebrows/"+file)), BodyPart.BP_TYPE_SINGLE));			
+			
 			files = assetManager.list("gfx/character/arms");
 			file = files[r.nextInt(files.length)];
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_ARMS, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/arms/"+file)), BodyPart.BP_TYPE_SINGLE));
-			
-						
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
