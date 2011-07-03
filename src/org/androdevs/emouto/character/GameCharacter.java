@@ -46,15 +46,19 @@ public class GameCharacter extends Layer
 	
 	private String name;
 	private String surname;
+	private Personality tendencies;
+	public Personality emotions;
 	
 	private HashMap<Integer, BodyPart> bodyparts;
 	
-	public GameCharacter(String name, String surname)
+	public GameCharacter(String name, String surname, Personality personality)
 	{
 		super();
 		
 		this.name = name;
 		this.surname = surname;
+		tendencies = personality;
+		emotions = new Personality(50,50,50,50);
 		
 		bodyparts = new HashMap<Integer, BodyPart>();
 	}
@@ -168,5 +172,16 @@ public class GameCharacter extends Layer
 		ret[1] = Integer.parseInt(splitted[2]);
 		
 		return ret;
+	}
+
+	public Personality getTendencies() {
+		return tendencies;
+	}
+
+	public String getName() {
+		return name;
+	}
+	public String getSurname() {
+		return surname;
 	}
 }
