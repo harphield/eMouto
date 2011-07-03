@@ -132,7 +132,8 @@ public class GameCharacter extends Layer
 			bodyparts.put(CHAR_BODYPART_EYEBROWS, 	new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/eyebrows/"+file)), BodyPart.BP_TYPE_SINGLE));			
 			
 			files = assetManager.list("gfx/character/arms");
-			file = files[r.nextInt(files.length)];
+//			file = files[r.nextInt(files.length)];
+			file = files[6];
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_ARMS, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/arms/"+file)), BodyPart.BP_TYPE_SINGLE));
 
