@@ -137,6 +137,7 @@ public class GameCharacter extends Layer
 			pos = getBodypartMargins(file);
 			bodyparts.put(CHAR_BODYPART_ARMS, 		new BodyPart(pos[0], pos[1], new Sprite(0,0, TextureFactory.loadRegion("character/arms/"+file)), BodyPart.BP_TYPE_SINGLE));
 
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
